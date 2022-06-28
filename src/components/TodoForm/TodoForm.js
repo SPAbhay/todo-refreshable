@@ -1,43 +1,48 @@
-import React, {useState} from 'react';
-import {v4 as uuid} from "uuid";
-import './TodoForm.css';
+import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
+import { setLocalStorage } from "../../lib/localStorage";
+import "./TodoForm.css";
 
-const TodoForm = ({addTodo}) => {
-    const [todoName, setTodoName] = useState("");
-    const [todo, setTodo] = useState({
-        id: "",
-        task: "",
-        completed: false
-    });
+const TodoForm = ({ todos, setTodos, storageKey }) => {
+  const [todoName, setTodoName] = useState("");
 
-    function handleTaskInputChange(e) {
-        setTodoName(e.target.value);
-        setTodo({...todo, task: todoName});
+  function handleTaskInputChange(e) {
+    setTodoName(e.target.value);
+  }
 
-        console.log(todo);
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (todo.task.trim()) {
+    const object = {
+      id: uuid(),
+      task: todoName,
+      completed: false,
+    };
 
+    const currentTodos = [...todos, object];
+    setTodos(currentTodos);
 
-            setTodo({...todo, task: "1234"});
-            addTodo({...todo, id: uuid()})
-        }
-        setTodoName("");
-    }
+    setLocalStorage({ value: currentTodos });
 
+    setTodoName("");
+  }
 
-    return (
-        <>
-            <div className="form">
-                <form onSubmit={handleSubmit}>
-                    <input className="form__input" name="task" type="text" placeholder="What needs to be done?" value={todoName} onChange={handleTaskInputChange}/>
-                </form>
-            </div>
-        </>
-    );
+  return (
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <input
+          className="form__input"
+          type="text"
+          placeholder="What needs to be done?"
+          value={todoName}
+          onChange={handleTaskInputChange}
+          //   onKeyUp={(e) => {
+          //     if (e.key === "Enter") handleSubmit();
+          //   }}
+        />
+      </form>
+    </div>
+  );
 };
 
 export default TodoForm;
