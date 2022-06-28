@@ -1,0 +1,32 @@
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+
+}
+
+.todo{
+    max-width: 40rem;
+    width: 90vw;
+    margin: 3rem 0;
+}
+
+.todo__heading{
+    font-weight: 100;
+    font-size: 6rem;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0;
+    color: var(--color-heading);
+}
