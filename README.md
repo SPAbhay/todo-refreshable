@@ -3,12 +3,13 @@
 The project is a Progressive Web App for TODO list. The app displays the todo list for the user, and saves it in the local storage which makes the data stored even when refreshed. As soon as the checkbox is ticked, the task is considered complete and is shifted to the bottom of the list. Also, a task can be deleted by toggling the delete button. 
 
 ## Screenshots
+Displaying the current todos, while shifting the todo done to the bottom - 
 ![image](https://user-images.githubusercontent.com/35527492/176188566-78a05d09-169c-4768-bd3b-43215acc7cf6.png)
-<p align="center"><i>Displaying the current todos, while shifting the todo done to the bottom.</p></i> 
-![image](https://user-images.githubusercontent.com/35527492/176188513-a8b882ad-a664-43aa-a87c-783fda091bc2.png)
-<p align="center"><i>Accessing the local storage to make the app work as an offline app. </p></i> 
-![image](https://user-images.githubusercontent.com/35527492/176188668-9a54e687-5c7b-4650-a32b-428d7b02299d.png)
-<p align="center"><i>Delete button removing a todo from the list. </p></i> 
+Accessing the local storage to make the app work as an offline app - 
+![image](https://user-images.githubusercontent.com/35527492/176190194-105a9c98-ebce-4b35-a85d-ab59930cd217.png)
+Delete button removing a todo from the list - 
+![image](https://user-images.githubusercontent.com/35527492/176190273-9a8c8c28-92fc-4290-8475-ba9200f44999.png)
+
 
 ## Available Scripts
 
